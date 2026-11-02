@@ -1,0 +1,20 @@
+Script started on 2026-11-02 18:09:53-03:00 [COMMAND="make -B testar-init" <not executed on terminal>]
+gcc -std=gnu11 -Wall -Wextra -pthread sync_car.c teste_init.c -o teste_init
+./teste_init
+Inicializacao da estacao: PASS
+
+Script done on 2026-11-02 18:09:54-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-02 18:11:30-03:00 [COMMAND="printf "Gravacao adicional: OK\n"" <not executed on terminal>]
+Gravacao adicional: OK
+
+Script done on 2026-11-02 18:11:30-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-02 18:15:30-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="148" LINES="10"]
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$ git pullshcommit -m "adição da função exe_simulaçao, faltam mais testes"add .[Kcat rate_dad.out[8@./scheduler rate voo.tx[C[6Prm -f rate_dad.ou[C[6@./scheduler rate voo.tx[C[8Pcat rate_dad.ou[C[7Pgit add .commit -m "adição da função exe_simulaçao, faltam mais testes"push[Kll[K^C[?2004l[?2004h[?2004l
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$ [7mInicializacao da estacao: PASS[27mInicializacao da estacao: PASS[7mmake -B testar-init[27m[1Pmake -B testar-ini[K[K[K[K[K[K[K[7mmake -B testar-init[27mmake -B testar-init
+[?2004lgcc -std=gnu11 -Wall -Wextra -pthread sync_car.c teste_init.c -o teste_init
+./teste_init
+Inicializacao da estacao: PASS
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$ exit
+[?2004lexit
+
+Script done on 2026-11-02 18:27:24-03:00 [COMMAND_EXIT_CODE="0"]
