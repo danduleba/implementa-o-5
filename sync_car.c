@@ -23,3 +23,16 @@ void station_init(struct station *station)
     station->vagas = 0;
     station->embarcando = 0;
 }
+
+void station_wait_for_car(struct station *station)
+{
+    pthread_mutex_lock(&station->lock);
+    station->esperando++;
+    while (station->vagas == 0) {
+        pthread_cond_wait(&station->carro_chegou, &station->lock);
+    }
+    station->vagas--;
+    station->esperando--;
+    station->embarcando++;
+    pthread_mutex_unlock(&station->lock);
+}

@@ -18,3 +18,42 @@ Inicializacao da estacao: PASS
 [?2004lexit
 
 Script done on 2026-11-02 18:27:24-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-03 17:46:44-03:00 [COMMAND="make -B CFLAGS="-std=gnu11 -Wall -Wextra -Werror -pthread" testar-init testar-espera" <not executed on terminal>]
+gcc -std=gnu11 -Wall -Wextra -Werror -pthread sync_car.c teste_init.c -o teste_init
+[01m[Ksync_car.c:39:6:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kstation_wait_for_car[m[K’
+   39 | void [01;31m[Kstation_wait_for_car[m[K(struct station *station)
+      |      [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Ksync_car.c:27:6:[m[K [01;36m[Knote: [m[Kprevious definition of ‘[01m[Kstation_wait_for_car[m[K’ with type ‘[01m[Kvoid(struct station *)[m[K’
+   27 | void [01;36m[Kstation_wait_for_car[m[K(struct station *station)
+      |      [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+make: *** [Makefile:12: teste_init] Error 1
+
+Script done on 2026-11-03 17:46:44-03:00 [COMMAND_EXIT_CODE="2"]
+Script started on 2026-11-03 17:46:57-03:00 [COMMAND="make -B CFLAGS="-std=gnu11 -Wall -Wextra -Werror -pthread" testar-init testar-espera" <not executed on terminal>]
+gcc -std=gnu11 -Wall -Wextra -Werror -pthread sync_car.c teste_init.c -o teste_init
+./teste_init
+Inicializacao da estacao: PASS
+gcc -std=gnu11 -Wall -Wextra -Werror -pthread sync_car.c teste_espera.c -o teste_espera
+./teste_espera
+PASS: 6 passageiros aguardam sem vagas.
+PASS: aviso sem vagas mantem os passageiros esperando.
+PASS: 2 vagas liberam exatamente 2 passageiros; 4 continuam esperando.
+PASS: 2 reservas concluidas antes de qualquer confirmacao de embarque.
+PASS: as 4 vagas seguintes atendem todos os passageiros restantes.
+Espera dos passageiros: PASS
+
+Script done on 2026-11-03 17:46:59-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-03 17:52:57-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="148" LINES="10"]
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$ [7mmake -B testar-espera[27mmake -B testar-espera
+[?2004lgcc -std=gnu11 -Wall -Wextra -pthread sync_car.c teste_espera.c -o teste_espera
+./teste_espera
+PASS: 6 passageiros aguardam sem vagas.
+PASS: aviso sem vagas mantem os passageiros esperando.
+PASS: 2 vagas liberam exatamente 2 passageiros; 4 continuam esperando.
+PASS: 2 reservas concluidas antes de qualquer confirmacao de embarque.
+PASS: as 4 vagas seguintes atendem todos os passageiros restantes.
+Espera dos passageiros: PASS
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$ exit
+[?2004lexit
+
+Script done on 2026-11-03 17:53:14-03:00 [COMMAND_EXIT_CODE="0"]
