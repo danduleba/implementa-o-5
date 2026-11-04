@@ -4,28 +4,28 @@
 
 int main(void)
 {
-    struct station station;
-    station_init(&station);
+    struct station estacao;
+    station_init(&estacao);
 
-    if (station.esperando != 0 || station.vagas != 0 ||
-        station.embarcando != 0) {
+    if (estacao.esperando != 0 || estacao.vagas != 0 ||
+        estacao.embarcando != 0) {
         fprintf(stderr, "Falha: os contadores devem iniciar em zero.\n");
         return EXIT_FAILURE;
     }
 
-    if (pthread_mutex_lock(&station.lock) != 0) {
+    if (pthread_mutex_lock(&estacao.trava) != 0) {
         fprintf(stderr, "Falha ao adquirir o mutex.\n");
         return EXIT_FAILURE;
     }
 
-    if (pthread_mutex_unlock(&station.lock) != 0) {
+    if (pthread_mutex_unlock(&estacao.trava) != 0) {
         fprintf(stderr, "Falha ao liberar o mutex.\n");
         return EXIT_FAILURE;
     }
 
-    pthread_cond_destroy(&station.carro_chegou);
-    pthread_cond_destroy(&station.embarque_concluido);
-    pthread_mutex_destroy(&station.lock);
+    pthread_cond_destroy(&estacao.carro_chegou);
+    pthread_cond_destroy(&estacao.embarque_concluido);
+    pthread_mutex_destroy(&estacao.trava);
 
     printf("Inicializacao da estacao: PASS\n");
     return EXIT_SUCCESS;

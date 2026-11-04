@@ -57,3 +57,87 @@ Espera dos passageiros: PASS
 [?2004lexit
 
 Script done on 2026-11-03 17:53:14-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-04 16:05:12-03:00 [COMMAND="make -B CFLAGS="-std=gnu11 -Wall -Wextra -Werror -pthread" testar-init testar-espera" <not executed on terminal>]
+gcc -std=gnu11 -Wall -Wextra -Werror -pthread sync_car.c teste_init.c -o teste_init
+./teste_init
+Inicializacao da estacao: PASS
+gcc -std=gnu11 -Wall -Wextra -Werror -pthread sync_car.c teste_espera.c -o teste_espera
+./teste_espera
+PASS: 6 passageiros aguardam sem vagas.
+PASS: aviso sem vagas mantem os passageiros esperando.
+PASS: 2 vagas liberam exatamente 2 passageiros; 4 continuam esperando.
+PASS: 2 reservas concluidas antes de qualquer confirmacao de embarque.
+PASS: as 4 vagas seguintes atendem todos os passageiros restantes.
+Espera dos passageiros: PASS
+
+Script done on 2026-11-04 16:05:13-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-04 16:43:51-03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="148" LINES="10"]
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$ [7mmake -B testar-init testar-espera[27mmake -B testar-init testar-espera
+[?2004lgcc -std=gnu11 -Wall -Wextra -pthread sync_car.c teste_init.c -o teste_init
+./teste_init
+Inicializacao da estacao: PASS
+gcc -std=gnu11 -Wall -Wextra -pthread sync_car.c teste_espera.c -o teste_espera
+./teste_espera
+PASS: 6 passageiros aguardam sem vagas.
+PASS: aviso sem vagas mantem os passageiros esperando.
+PASS: 2 vagas liberam exatamente 2 passageiros; 4 continuam esperando.
+PASS: 2 reservas concluidas antes de qualquer confirmacao de embarque.
+PASS: as 4 vagas seguintes atendem todos os passageiros restantes.
+Espera dos passageiros: PASS
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$ [K]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$ make -B testar-init testar-esperaexit[Kmake -B testar-esperaexit[Kmake -B testar-init testar-espera[K[7mgcc -std=gnu11 -Wall -Wextra -pthread sync_car.c teste_fornecido.c -o sync_car[27m
+[7m./sync_car[27m[A]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$ gcc -std=gnu11 -Wall -Wextra -pthread sync_car.c teste_fornecido.c -o sync_car
+./sync_car
+[?2004l[01m[Kteste_fornecido.c:[m[K In function ‘[01m[Kalarm_handler[m[K’:
+[01m[Kteste_fornecido.c:36:24:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kfoo[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   36 | void alarm_handler([01;35m[Kint foo[m[K)
+      |                    [01;35m[K~~~~^~~[m[K
+car entering station with 46 free seats
+car departed station with 46 new passenger(s) (expected 46)
+car entering station with 28 free seats
+car departed station with 28 new passenger(s) (expected 28)
+car entering station with 29 free seats
+car departed station with 26 new passenger(s) (expected 26)
+Looks good!
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$ [K]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$ [7mmake -B estressar REPETICOES=300 LIMITE_PASSAGEIROS=1024[27mmake -B estressar REPETICOES=300 LIMITE_PASSAGEIROS=1024
+[?2004lgcc -std=gnu11 -Wall -Wextra -pthread sync_car.c teste_limites.c -o teste_limites
+./teste_limites 300 1024
+TESTES DE LIMITES: 300 rodadas aleatorias; carga maxima 1024.
+[01/12] Estacao vazia: capacidades 0, 1, 50 e INT_MAX
+    PASS
+[02/12] Carro sem vagas com 32 passageiros esperando
+    PASS
+[03/12] Varios carros, vagas limitadas e reaproveitamento da estacao
+    PASS
+[04/12] Mais vagas do que passageiros
+    PASS
+[05/12] Capacidade INT_MAX com passageiros esperando
+    PASS
+[06/12] Ultima confirmacao atrasada impede a partida
+    PASS
+[07/12] Avisos extras nao autorizam reservas nem partida
+    PASS
+[08/12] Novos passageiros chegam durante o embarque
+    PASS
+[09/12] Passageiro apos a partida precisa aguardar outro carro
+    PASS
+[10/12] Quatro estacoes funcionando simultaneamente
+    PASS
+[11/12] Carga crescente de passageiros simultaneos
+    Carga de 1 passageiros: PASS
+    Carga de 2 passageiros: PASS
+    Carga de 4 passageiros: PASS
+    Carga de 8 passageiros: PASS
+ Script started on 2026-11-04 16:40:59-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="148" LINES="10"]
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$ [K]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$ [K]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$ [K]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$    Carga de 16 passageiros: PASS
+    Carga de 32 passageiros: PASS
+    Carga de 64 passageiros: PASS
+    Carga de 128 passageiros: PASS
+    Carga de 256 passageiros: PASS
+    Carga de 512 passageiros: PASS
+    Carga de 1024 passageiros: PASS
+    PASS
+[12/12] Rodadas aleatorias com confirmacoes concorrentes
+    300 rodadas; 24881 passageiros; 809 carros; semente inicial 20261104.
+    PASS
+RESULTADO: 12/12 cenarios aprovados; 0 falhas; 0 inconclusivos.
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/implementacao-5[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/implementacao-5[00m$ 
