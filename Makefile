@@ -7,8 +7,8 @@ LIMITE_PASSAGEIROS ?= 512
 
 all: sync_car
 
-sync_car: sync_car.c sync_car.h teste_fornecido.c
-	$(CC) $(CFLAGS) sync_car.c teste_fornecido.c -o sync_car
+sync_car: sync_car.c sync_car.h sync_car-runner.c
+	$(CC) $(CFLAGS) sync_car.c sync_car-runner.c -o sync_car
 
 teste_init: sync_car.c sync_car.h teste_init.c
 	$(CC) $(CFLAGS) sync_car.c teste_init.c -o teste_init

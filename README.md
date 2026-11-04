@@ -8,7 +8,7 @@ Desenvolvido e testado no Ubuntu pelo WSL, no Windows. Para compilar, é necess�
 
 - `sync_car.c`: implementação das quatro funções de sincronização.
 - `sync_car.h`: estrutura da estação e declaração das funções.
-- `teste_fornecido.c`: teste completo fornecido pelo professor, com 100 passageiros.
+- `sync_car-runner.c`: teste completo fornecido pelo professor, com 100 passageiros.
 - `teste_init.c`: teste da inicialização da estação.
 - `teste_espera.c`: testes parciais da espera e reserva de vagas.
 - `teste_limites.c`: testes de concorrência, casos limite e cargas maiores, gerados com auxílio de IA.
